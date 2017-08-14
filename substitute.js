@@ -6,7 +6,9 @@ function replaceText (node) {
       return;
     }
 
-    node.textContent = node.textContent.replace(regex, 'Neo-Nazis');
+    if (node.textContent.search(regex) >= 0) {
+      node.textContent = node.textContent.replace(regex, 'Neo-Nazis');
+    }
   }
   else {
     for (let i = 0; i < node.childNodes.length; i++) {
